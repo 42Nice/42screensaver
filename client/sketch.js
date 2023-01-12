@@ -74,7 +74,7 @@ function drawCircle(index, circle, center) {
 }
 
 async function parseJson(login) {
-  let data = await fetch('http://127.0.0.1:3000/data?userId=' + login);
+  let data = await fetch('https://42screensaver.hevel.tech/data?userId=' + login);
   if (!data.ok) {
     console.log("Error " + data.status);
     msg = "Error " + data.status;
