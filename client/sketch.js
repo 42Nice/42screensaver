@@ -74,11 +74,26 @@ function drawCircle(index, circle, center) {
 }
 
 async function parseJson(login) {
-  data = await (await fetch('http://127.0.0.1:3000/data?userId=' + login)).json();
-
+  let data = await fetch('http://127.0.0.1:3000/data?userId=' + login);
+  if (!data.ok) {
+    console.log("Error " + data.status);
+    msg = "Error " + data.status;
+    if (data.status == 404)
+      msg += " - User not found";
+    else if (data.status == 429)
+      msg += " - Too many requests";
+    else if (data.status == 500)
+      msg += " - Internal server error";
+    else if (data.status == 503)
+      msg += " - Service unavailable";
+    else
+      msg += "- Unknown error";
+    return;
+  }
+  let json = await data.json();
   let output = {};
-  for (let i of Object.keys(data)) {
-    output[data[i].slug] = data[i];
+  for (let i of Object.keys(json)) {
+    output[json[i].slug] = json[i];
   }
   return output;
 }
@@ -173,6 +188,7 @@ async function setup() {
 }
 
 let animation = true;
+let msg = null;
 
 function keyPressed() {
   if (key === ' ')
@@ -192,6 +208,13 @@ function draw() {
   drawGradient();
   // use cos and sin in degrees
   angleMode(DEGREES);
+
+  if (msg) {
+    fill(255);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text(msg, width / 2, height / 2);
+  }
 
   if (parsedData == undefined)
     return ;

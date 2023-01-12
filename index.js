@@ -45,10 +45,9 @@ app.get('/data', async (req, res) => {
     }
   }).then((response) => {
     let out = [];
-
     // for each project in the config
     for (let i = 0; i < config.projects.length; i++) {
-      let projectData = config.projects[i];
+      let projectData = {...config.projects[i]};
       // check if the user has a project with this id
       let project = response.data.find((project) => {
         return project.project.id == projectData.project_id;
@@ -64,7 +63,9 @@ app.get('/data', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.send(out);
   }).catch((error) => {
-    console.log(error);
+    // If an error occurred, send back the error code only
+    res.header("Access-Control-Allow-Origin", "*");
+    res.sendStatus(error.response.status);
   });
 });
 
