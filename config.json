@@ -1,0 +1,208 @@
+{
+    "projects": [
+        {
+            "slug": "42cursus-ft_printf",
+            "name": "ft_printf",
+            "status": "not_registered",
+            "project_id": 1316
+        },
+        {
+            "slug": "born2beroot",
+            "name": "Born2beroot",
+            "status": "not_registered",
+            "project_id": 1994
+        },
+        {
+            "slug": "cpp-module-01",
+            "name": "CPP Module 01",
+            "status": "not_registered",
+            "project_id": 1339
+        },
+        {
+            "slug": "42cursus-get_next_line",
+            "name": "get_next_line",
+            "status": "not_registered",
+            "project_id": 1327
+        },
+        {
+            "slug": "so_long",
+            "name": "so_long",
+            "status": "not_registered",
+            "project_id": 2009
+        },
+        {
+            "slug": "cpp-module-00",
+            "name": "CPP Module 00",
+            "status": "not_registered",
+            "project_id": 1338
+        },
+        {
+            "slug": "webserv",
+            "name": "webserv",
+            "status": "not_registered",
+            "project_id": 1332
+        },
+        {
+            "slug": "cub3d",
+            "name": "cub3d",
+            "status": "not_registered",
+            "project_id": 1326
+        },
+        {
+            "slug": "cpp-module-05",
+            "name": "CPP Module 05",
+            "status": "not_registered",
+            "project_id": 1343
+        },
+        {
+            "slug": "42cursus-libft",
+            "name": "Libft",
+            "status": "not_registered",
+            "project_id": 1314
+        },
+        {
+            "slug": "ft_transcendence",
+            "name": "ft_transcendence",
+            "status": "not_registered",
+            "project_id": 1337
+        },
+        {
+            "slug": "exam-rank-06",
+            "name": "Exam Rank 06",
+            "status": "not_registered",
+            "project_id": 1324
+        },
+        {
+            "slug": "ft_irc",
+            "name": "ft_irc",
+            "status": "not_registered",
+            "project_id": 1336
+        },
+        {
+            "slug": "ft_containers",
+            "name": "ft_containers",
+            "status": "not_registered",
+            "project_id": 1335
+        },
+        {
+            "slug": "inception",
+            "name": "Inception",
+            "status": "not_registered",
+            "project_id": 1983
+        },
+        {
+            "slug": "exam-rank-04",
+            "name": "Exam Rank 04",
+            "status": "not_registered",
+            "project_id": 1322
+        },
+        {
+            "slug": "exam-rank-05",
+            "name": "Exam Rank 05",
+            "status": "not_registered",
+            "project_id": 1323
+        },
+        {
+            "slug": "cpp-module-08",
+            "name": "CPP Module 08",
+            "status": "not_registered",
+            "project_id": 1346
+        },
+        {
+            "slug": "cpp-module-07",
+            "name": "CPP Module 07",
+            "status": "not_registered",
+            "project_id": 1345
+        },
+        {
+            "slug": "cpp-module-06",
+            "name": "CPP Module 06",
+            "status": "not_registered",
+            "project_id": 1344
+        },
+        {
+            "slug": "cpp-module-04",
+            "name": "CPP Module 04",
+            "status": "not_registered",
+            "project_id": 1342
+        },
+        {
+            "slug": "cpp-module-03",
+            "name": "CPP Module 03",
+            "status": "not_registered",
+            "project_id": 1341
+        },
+        {
+            "slug": "cpp-module-02",
+            "name": "CPP Module 02",
+            "status": "not_registered",
+            "project_id": 1340
+        },
+        {
+            "slug": "minirt",
+            "name": "miniRT",
+            "status": "not_registered",
+            "project_id": 1315
+        },
+        {
+            "slug": "netpractice",
+            "name": "NetPractice",
+            "status": "not_registered",
+            "project_id": 2007
+        },
+        {
+            "slug": "42cursus-minishell",
+            "name": "minishell",
+            "status": "not_registered",
+            "project_id": 1331
+        },
+        {
+            "slug": "42cursus-philosophers",
+            "name": "Philosophers",
+            "status": "not_registered",
+            "project_id": 1334
+        },
+        {
+            "slug": "exam-rank-03",
+            "name": "Exam Rank 03",
+            "status": "not_registered",
+            "project_id": 1321
+        },
+        {
+            "slug": "exam-rank-02",
+            "name": "Exam Rank 02",
+            "status": "not_registered",
+            "project_id": 1320
+        },
+        {
+            "slug": "42cursus-fract-ol",
+            "name": "fract-ol",
+            "status": "not_registered",
+            "project_id": 1476
+        },
+        {
+            "slug": "42cursus-fdf",
+            "name": "FdF",
+            "status": "not_registered",
+            "project_id": 2008
+        },
+        {
+            "slug": "pipex",
+            "name": "pipex",
+            "status": "not_registered",
+            "project_id": 2004
+        },
+        {
+            "slug": "minitalk",
+            "name": "minitalk",
+            "status": "not_registered",
+            "project_id": 2005
+        },
+        {
+            "slug": "42cursus-push_swap",
+            "name": "push_swap",
+            "status": "not_registered",
+            "project_id": 1471
+        }
+    ]
+}
