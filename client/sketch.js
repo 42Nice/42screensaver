@@ -74,7 +74,7 @@ function drawCircle(index, circle, center) {
 }
 
 async function parseJson(login) {
-  let data = await fetch('https://42screensaver.hevel.tech/data?userId=' + login);
+  let data = await fetch('/data?userId=' + login);
   if (!data.ok) {
     console.log("Error " + data.status);
     msg = "Error " + data.status;
@@ -130,6 +130,8 @@ function getHolyData(input) {
         return getHolyData(input[i]);
       else if (parsedData[input[i]].status == "in_progress")
         return getHolyData(input[i]);
+      if (parsedData[input[i]].status == "failed")
+        return getHolyData(input[i]);
     }
     return getHolyData(input[0]);
   } else if ((input.type === "circle")) {
@@ -152,7 +154,7 @@ function getConfig() {
     1: {data: ["42cursus-ft_printf", "42cursus-get_next_line", "born2beroot"], offset: -90, speed: 2},
     2: {data: ["42cursus-push_swap", ["pipex", "minitalk"], "exam-rank-02", ["42cursus-fdf", "42cursus-fract-ol", "so_long"]], offset: -90, speed: 1.8},
     3: {data: ["exam-rank-03", "42cursus-philosophers", "42cursus-minishell"], offset: -90, speed: 1.6},
-    4: {data: [["cub3d", "minirt"], "netpractice", "exam-rank-04", { type: "circle", config: {0: {data: ["cpp-module-08"], offset: -90, speed: 1}, 0.5: {data: ["cpp-module-00", "cpp-module-01", "cpp-module-02", "cpp-module-03", "cpp-module-04", "cpp-module-05", "cpp-module-06", "cpp-module-07"], offset: -90, speed: 1.2}} }], offset: -90, speed: 1.4},
+    4: {data: [["cub3d", "minirt"], "netpractice", "exam-rank-04", { type: "circle", config: {0: {data: ["cpp-module-08"], offset: -90, speed: 1}, 0.5: {data: ["cpp-module-00", "cpp-module-01", "cpp-module-02", "cpp-module-03", "cpp-module-04", "cpp-module-05", "cpp-module-06", "cpp-module-07"], offset: -90, speed: 3}} }], offset: -90, speed: 1.4},
     5: {data: ["exam-rank-05", ["webserv", "ft_irc"], "ft_containers", "inception"], offset: -90, speed: 1.2},
     6: {data: ["ft_transcendence", "exam-rank-06"], offset: -90, speed: 1}
   }

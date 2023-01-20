@@ -55,6 +55,8 @@ app.get('/data', async (req, res) => {
       if (project) {
         // if the user has a project with this id, update the project status
         projectData.status = project.status;
+        if (project['validated?'] == false)
+          projectData.status = "failed";
       }
       // add the project to the output
       out.push(projectData);
