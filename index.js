@@ -1,12 +1,12 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const port = 3000;
 const config = require('./config.json');
 require('dotenv').config();
 
 const API_UUID = process.env.API_UUID;
 const API_SECRET = process.env.API_SECRET;
+const PORT = process.env.PORT || 3000;
 
 const ACCESS_TOKEN_URL = "https://api.intra.42.fr/oauth/token";
 
@@ -73,7 +73,7 @@ app.get('/data', async (req, res) => {
 
 app.use(express.static('client'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
 });
 
