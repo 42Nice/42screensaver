@@ -115,7 +115,9 @@ function getHolyData(input) {
       outline = c_failed;
     if (entry.slug == "ft_transcendence")
       radius = 80;
-    else if (entry.slug.startsWith("cpp-module-0") && entry.slug != "cpp-module-08")
+    else if (entry.slug == "cpp-module-04" || entry.slug == "cpp-module-09")
+      radius = 30;
+    else if (entry.slug.startsWith("cpp-module-0"))
       radius = 20;
     fill = fill ?? darken(outline, 0.8);
     if (entry.slug.startsWith("exam-rank-"))
@@ -154,8 +156,8 @@ function getConfig() {
     1: {data: ["42cursus-ft_printf", "42cursus-get_next_line", "born2beroot"], offset: -90, speed: 2},
     2: {data: ["42cursus-push_swap", ["pipex", "minitalk"], "exam-rank-02", ["42cursus-fdf", "42cursus-fract-ol", "so_long"]], offset: -90, speed: 1.8},
     3: {data: ["exam-rank-03", "42cursus-philosophers", "42cursus-minishell"], offset: -90, speed: 1.6},
-    4: {data: [["cub3d", "minirt"], "netpractice", "exam-rank-04", { type: "circle", config: {0: {data: ["cpp-module-08"], offset: -90, speed: 1}, 0.5: {data: ["cpp-module-00", "cpp-module-01", "cpp-module-02", "cpp-module-03", "cpp-module-04", "cpp-module-05", "cpp-module-06", "cpp-module-07"], offset: -90, speed: 3}} }], offset: -90, speed: 1.4},
-    5: {data: ["exam-rank-05", ["webserv", "ft_irc"], "ft_containers", "inception"], offset: -90, speed: 1.2},
+    4: {data: [["cub3d", "minirt"], "netpractice", "exam-rank-04", { type: "circle", config: {0: {data: ["cpp-module-04"], offset: -90, speed: 1}, 0.5: {data: ["cpp-module-00", "cpp-module-01", "cpp-module-02", "cpp-module-03"], offset: -90, speed: 3}} }], offset: -90, speed: 1.4},
+    5: {data: ["exam-rank-05", ["webserv", "ft_irc"], { type: "circle", config: {0: {data: ["cpp-module-09"], offset: -90, speed: 1}, 0.5: {data: ["cpp-module-05", "cpp-module-06", "cpp-module-07", "cpp-module-08"], offset: -90, speed: 3}} }, "inception"], offset: -90, speed: 1.2},
     6: {data: ["ft_transcendence", "exam-rank-06"], offset: -90, speed: 1}
   }
 }
