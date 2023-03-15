@@ -88,6 +88,7 @@ async function parseJson(login) {
       msg += " - Service unavailable";
     else
       msg += "- Unknown error";
+    login = null;
     return;
   }
   let json = await data.json();
@@ -174,19 +175,39 @@ function drawGradient() {
 }
 
 var parsedData;
+var login;
 
 async function setup() {
   let params = getURLParams();
-  let login = params.login;
-  if (!login)
-    login = "alopez";
-  parsedData = await parseJson(login);
-  print(parsedData);
+  login = params.login;
+  if (login == null || login == "")
+    msg = "Please provide a login";
+  else {
+    parsedData = await parseJson(login);
+    if (parsedData == null)
+      login = null;
+    print(parsedData);
+  }
   c_completed = color("#00BABC");
   c_inprogress = color("#FFFFFF");
   c_notstarted = color("#9D9EA0");
   c_failed = color("#CC6256");
   c = createCanvas(windowWidth, windowHeight);
+  if (login == null || login == "") {
+    input = createInput();
+    input.position(width / 2 - 110, height / 2 + 50);
+    input.size(200);
+
+    input.attribute('placeholder', 'login');
+
+    input.value(login ?? "");
+    button = createButton('submit');
+    button.position(width / 2 - button.width / 2, input.y + input.height + 10);
+    button.mousePressed(() => {
+      login = input.value();
+      document.location.href = `?login=${login}`;
+    });
+  }
   config = getConfig();
   // get the element with the class ".nav.preview-nav" and store it in a variable called "nav"
 }
