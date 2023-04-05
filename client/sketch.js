@@ -16,6 +16,8 @@ function getPositions(center, circle, parentRadius) {
   
   if (animation)
     circle.offset += circle.speed * (deltaTime / 100);
+  else
+    circle.offset = -90;
 
   // loop through the points
   for (let i = 0; i < count; i++) {
@@ -33,9 +35,9 @@ function drawCircle(index, circle, center) {
   stroke(getCircleColor(circle));
   // Draw the circle ring
   if (index != 0)
-    ellipse(center.x, center.y, (windowHeight / 7) * index, (windowHeight / 7) * index);
+    ellipse(center.x, center.y, (height / 7) * index, (height / 7) * index);
   // Calculate the positions of the features
-  let pos = getPositions({x: center.x, y: center.y}, circle, (windowHeight / 7) * index / 2);
+  let pos = getPositions({x: center.x, y: center.y}, circle, (height / 7) * index / 2);
   for (let i = 0; i < circle.data.length; i++) {
     let f = circle.data[i];
     if (typeof f === "string" || Array.isArray(f))
@@ -47,6 +49,8 @@ function drawCircle(index, circle, center) {
       stroke(f.outline);
       ellipse(pos[i].x, pos[i].y, f.radius, f.radius);
       // draw a text that fits in the ellipse
+      if (!showTexts)
+        continue;
       fill("#FFFFFF");
       noStroke();
       textSize(f.radius / 8);
@@ -59,6 +63,8 @@ function drawCircle(index, circle, center) {
       stroke(f.outline);
       rect(pos[i].x - f.width / 2, pos[i].y - f.height / 2, f.width, f.height, f.radius);
       // draw a text that fits in the rectangle
+      if (!showTexts)
+        continue;
       fill("#FFFFFF");
       noStroke();
       textSize(10);
@@ -166,11 +172,11 @@ function getConfig() {
 function drawGradient() {
   background("#090a0f");
   noFill();
-  for (let y = windowHeight; y > 0; y--) {
-    let inter = map(y, 0, windowHeight, 0, 1);
+  for (let y = height; y > 0; y--) {
+    let inter = map(y, 0, height, 0, 1);
     let c = lerpColor(color("#002534"), color("#090a0f"), inter);
     stroke(c);
-    line(0, y, windowWidth, y);
+    line(0, y, width, y);
   }
 }
 
@@ -213,9 +219,12 @@ async function setup() {
 }
 
 let animation = true;
+let showTexts = true;
 let msg = null;
 
 function keyPressed() {
+  if (login == null || login == "")
+    return;
   if (key === ' ')
     animation = !animation;
   if (key === 'f')
@@ -223,6 +232,21 @@ function keyPressed() {
     fullscreen(!fullscreen());
     resizeCanvas(windowWidth, windowHeight);
   }
+  if (key === 'd')
+  {
+    let anim = animation;
+    let texts = showTexts;
+    animation = false;
+    showTexts = false;
+    resizeCanvas(window.screen.width, window.screen.height);
+    draw();
+    saveCanvas(c, 'wallpaper', 'png');
+    animation = anim;
+    showTexts = texts;
+    resizeCanvas(windowWidth, windowHeight);
+  }
+  if (key === 't')
+    showTexts = !showTexts;
 }
 
 function windowResized() {
@@ -245,6 +269,6 @@ function draw() {
     return ;
 
   for (let i = 0; i < 7; i++) {
-    drawCircle(i, config[i], { x: windowWidth / 2, y: windowHeight / 2 });
+    drawCircle(i, config[i], { x: width / 2, y: height / 2 });
   }
 }
