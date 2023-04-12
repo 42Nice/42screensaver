@@ -153,7 +153,7 @@ function getCircleColor(circle) {
   // if one is in progress return c_inprogress
   // else return c_notstarted
   if (circle.data.every((x) => getHolyData(x).outline == c_completed)) return c_completed;
-  if (circle.data.some((x) => getHolyData(x).outline == c_inprogress)) return c_inprogress;
+  if (circle.data.some((x) => getHolyData(x).outline == c_inprogress)) return c_circle_inprogress;
   return c_notstarted;
 }
 
@@ -195,7 +195,8 @@ async function setup() {
     print(parsedData);
   }
   c_completed = color("#00BABC");
-  c_inprogress = color("#FFFFFF");
+  c_inprogress = color("#ffa13d");
+  c_circle_inprogress = color("#FFFFFF");
   c_notstarted = color("#9D9EA0");
   c_failed = color("#CC6256");
   c = createCanvas(windowWidth, windowHeight);
@@ -215,7 +216,6 @@ async function setup() {
     });
   }
   config = getConfig();
-  // get the element with the class ".nav.preview-nav" and store it in a variable called "nav"
 }
 
 let animation = true;
