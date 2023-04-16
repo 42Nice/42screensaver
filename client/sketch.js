@@ -118,6 +118,11 @@ function getHolyData(input) {
       outline = c_inprogress;
       fill = color("#46464c");
     }
+    else if (entry.status == "waiting_for_correction")
+    {
+      outline = c_eval;
+      fill = color("#46464c");
+    }
     else if (entry.status == "failed")
       outline = c_failed;
     if (entry.slug == "ft_transcendence")
@@ -135,11 +140,8 @@ function getHolyData(input) {
     // else if one is in progress, return it
     // else return the first one
     for (let i = 0; i < input.length; i++) {
-      if (parsedData[input[i]].status == "finished")
-        return getHolyData(input[i]);
-      else if (parsedData[input[i]].status == "in_progress")
-        return getHolyData(input[i]);
-      if (parsedData[input[i]].status == "failed")
+      if (["finished", "waiting_for_correction", "in_progress", "failed"]
+          .includes(parsedData[input[i]].status))
         return getHolyData(input[i]);
     }
     return getHolyData(input[0]);
@@ -195,6 +197,7 @@ async function setup() {
     print(parsedData);
   }
   c_completed = color("#00BABC");
+  c_eval = color("#2160ff");
   c_inprogress = color("#ffa13d");
   c_circle_inprogress = color("#FFFFFF");
   c_notstarted = color("#9D9EA0");
