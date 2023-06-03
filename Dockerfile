@@ -1,6 +1,11 @@
 FROM node:20-alpine3.17
 
-COPY . /app
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
+COPY srcs /app/srcs
+COPY client /app/client
+COPY static /app/static
+
 WORKDIR /app
 
 RUN npm install

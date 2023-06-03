@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const config = require('./config.json');
+const config = require('../static/config.json');
 
 const API_UUID = process.env.API_UUID;
 const API_SECRET = process.env.API_SECRET;
