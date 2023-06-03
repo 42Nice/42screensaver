@@ -2,11 +2,10 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const config = require('./config.json');
-require('dotenv').config();
 
 const API_UUID = process.env.API_UUID;
 const API_SECRET = process.env.API_SECRET;
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 const ACCESS_TOKEN_URL = "https://api.intra.42.fr/oauth/token";
 
