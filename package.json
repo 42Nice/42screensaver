@@ -4,7 +4,7 @@
   "description": "A screensaver with your Holygraph",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node srcs/index.js"
   },
   "author": "",
   "license": "ISC",

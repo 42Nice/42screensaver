@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const config = require('../static/config.json');
+const config = require('/app/static/config.json');
 
 const API_UUID = process.env.API_UUID;
 const API_SECRET = process.env.API_SECRET;
@@ -20,7 +20,7 @@ for (let i = 0; i < config.projects.length; i++) {
 }
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/index.html');
+  res.sendFile('/app/client/index.html');
 });
 
 app.get('/data', async (req, res) => {
