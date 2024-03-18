@@ -8,4 +8,8 @@ run:
 
 push:
 	docker tag 42screensaver:latest localhost:32000/42screensaver:latest
+<<<<<<< HEAD
 	docker push localhost:32000/42screensaver:latest
+=======
+	docker push localhost:32000/42screensaver:latest
+>>>>>>> 5f4903f (updated config)
